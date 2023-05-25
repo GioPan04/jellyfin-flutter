@@ -31,18 +31,30 @@ class LoginScreen extends ConsumerWidget {
         title: const Text("Login"),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.only(top: 32.0, left: 8.0, right: 8.0),
         children: [
-          TextField(
-            controller: _usernameController,
-            decoration: const InputDecoration(labelText: "Username"),
+          const FlutterLogo(
+            size: 64,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 24.0),
+            child: TextField(
+              controller: _usernameController,
+              decoration: const InputDecoration(
+                labelText: "Username",
+                border: OutlineInputBorder(),
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: TextField(
               controller: _passwordController,
               obscureText: true,
-              decoration: const InputDecoration(labelText: "Password"),
+              decoration: const InputDecoration(
+                labelText: "Password",
+                border: OutlineInputBorder(),
+              ),
               autofillHints: const [AutofillHints.password],
             ),
           ),
